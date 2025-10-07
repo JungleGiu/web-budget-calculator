@@ -1,59 +1,72 @@
-# Budget
+# 🧮 Web Budget Calculator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+## 📖 Introduction  
+**Web Budget Calculator** is a web application built with **Angular 20** that helps users estimate the total cost of building a website based on selected services and options.  
+The app dynamically updates the final price according to the user’s choices and provides a smooth, interactive interface for managing multiple quotes, filtering them, and even sharing them via URL.
 
-## Development server
+This project is part of a frontend learning path focused on mastering **Angular**, **Reactive Forms**, **Signals**, and **component communication** while applying real-world use cases.
 
-To start a local development server, run:
+---
+
+## 🎯 Goals  
+The main objectives of this project are:
+
+- ✅ Build a dynamic price calculator for web-related services.  
+- ✅ Implement reactive forms with validation for user inputs.  
+- ✅ Use Angular **Signals** to manage and update the state.  
+- ✅ Enable creation and storage of **multiple budgets**.  
+- ✅ Add features like **sorting, searching**, and **URL sharing** for quotes.  
+- ✅ Ensure scalability with a clean and modular **component architecture**.  
+- ✅ Apply **SASS** for custom and maintainable styling.
+
+---
+
+## 🚀 Getting Started  
+
+### Prerequisites  
+- Node.js >= 20  
+- Angular CLI >= 20  
+- Git  
+
+### Installation  
+```bash
+# Clone the repository
+git clone https://github.com/your-username/web-budget-calculator.git
+
+# Navigate to the project folder
+cd budget
+
+# Install dependencies
+npm install # or: yarn install, or: pnpm install
+
+# Start the development server
+ng start # or: yarn start, or: pnpm start
+
+```
+Then Open http://localhost:4200 in your browser.
+
+## Folder Structure
 
 ```bash
-ng serve
+budget/
+├── package.json
+├── package-lock.json
+├── angular.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.spec.json
+├── src/
+│   ├── app/
+│   │   ├── app.html
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   │   ├── app.scss
+│   │   ├── app.spec.ts
+│   │   ├── app.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.scss
+│   ├── public/
+
+
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
