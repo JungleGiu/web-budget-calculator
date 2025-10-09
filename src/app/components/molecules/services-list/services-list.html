@@ -1,0 +1,8 @@
+<div id="services-list">
+  @for ( product of products(); track product.id)  {
+    <app-service-card #card (addToCart)="updateCart(card.product)" [product]="product"></app-service-card>  
+  }
+</div>
+<div id="total">
+    <p>Total: {{total}}€</p>
+</div>

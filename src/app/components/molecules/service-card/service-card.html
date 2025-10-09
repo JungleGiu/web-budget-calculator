@@ -1,1 +1,28 @@
-<p>service-card works!</p>
+<div class="service-card" id="service-card-{{ product.id }}">
+  <h3>{{ product.name }}</h3>
+  <form>
+    <input type="checkbox" id="product-checkbox-{{ product.id }}" (change)="toggleSelection()" [checked]="isSelected === true" />
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}€</p>
+    <label for="product-quantity-{{ product.id }}">Quantity:</label>
+    <input
+      [disabled]="!isSelected ? 'disabled' : ''"
+      type="number"
+      min="1"
+      max="10"
+      value="{{ product.quantity }}"
+      (change)="changeQuantity($event.target.value)"
+      id="product-quantity-{{ product.id }}"
+    />
+    <label for="product-languages-{{ product.id }}">Languages:</label>
+    <input
+      [disabled]="!isSelected ? 'disabled' : ''"
+      type="number"
+      min="1"
+      max="10"
+      (change)="changeLanguages($event.target.value)"
+      value="{{ product.languages }}"
+      id="product-languages-{{ product.id }}"
+    />
+  </form>
+</div>
