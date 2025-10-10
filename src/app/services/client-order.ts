@@ -1,25 +1,24 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Product, Products } from '../models/product';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientOrder {
-
   cart = signal<Product[]>([]);
 
   addToCart(product: Product) {
-    this.cart.update(cart => [...cart, product]);
+    this.cart.update((cart) => [...cart, product]);
   }
-
-  removeFromCart(id: number) {
-    this.cart.update(cart => cart.filter(p => p.id !== id));
+  updateQuantity(productId: number, quantity: number) {
+    this.cart.update((cart) => cart.map((p) => (p.id === productId ? { ...p, quantity } : p)));
   }
-
+  updateLanguages(productId: number, languages: number) {
+    this.cart.update((cart) => cart.map((p) => (p.id === productId ? { ...p, languages } : p)));
+  }
+ removeFromCart(product: Product) {
+    this.cart.update((cart) => cart.filter((p) => p.id !== product.id));
+  }
   total = computed(() =>
-    this.cart().reduce((sum, p) => sum + p.price * p.quantity, 0)
+    this.cart().reduce((sum, p) => sum + p.price + (p.quantity * p.languages * 30), 0)
   );
-
 }
-
-
-
