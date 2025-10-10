@@ -1,26 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Product} from '../models/product';
+import { computed, Injectable, signal } from '@angular/core';
+import { Product, Products } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
 export class ClientOrder {
 
-  Cart: Product[] = [];
-  Total: number = 0;
+  cart = signal<Product[]>([]);
 
-addToCart(product: Product)  {
-    this.Cart.push(product);
-    this.calculateTotal();
+  addToCart(product: Product) {
+    this.cart.update(cart => [...cart, product]);
   }
-deleteFromCart(product: Product) {
-  this.Cart = this.Cart.filter(item => item.id !== product.id);
-  this.calculateTotal();
-}
-calculateTotal() {
-    this.Cart.forEach(product => {
-      this.Total += product.price + (product.quantity * product.languages);
-    });
+
+  removeFromCart(id: number) {
+    this.cart.update(cart => cart.filter(p => p.id !== id));
   }
+
+  total = computed(() =>
+    this.cart().reduce((sum, p) => sum + p.price * p.quantity, 0)
+  );
+
 }
 
 

@@ -10,14 +10,13 @@ import { Products, Product } from '../../../models/product';
   styleUrl: './services-list.scss'
 })
 export class ServicesList {
+
   clientOrder = inject(ClientOrder);
+  cart = this.clientOrder.cart;
+  total = this.clientOrder.total;
+  products = Products;  
 
-  total = this.clientOrder.Total;
-  products = signal(Products)
-
-
-  updateCart(product: Product) {
+  onAddToCart(product: Product) {
     this.clientOrder.addToCart(product);
   }
-
 }

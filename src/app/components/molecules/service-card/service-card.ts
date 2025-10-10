@@ -1,4 +1,4 @@
-import { Component, model, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Input  } from '@angular/core';
 import { Product } from '../../../models/product';
 
@@ -10,24 +10,15 @@ import { Product } from '../../../models/product';
 })
 export class ServiceCard {
 @Input({required : true}) product!: Product ;
+@Output() updateCart = new EventEmitter<Product>();
 
 isSelected = false;
 
-@Output() sendProduct = new EventEmitter<Product>();
-
-toggleSelection() {
-  this.isSelected = !this.isSelected;
+toggleSelection(isSelected: boolean) {
+  this.isSelected = isSelected;
+  this.updateCart.emit({...this.product});
 }
 
-changeQuantity(quantity : string) {
-  this.product.quantity = parseInt(quantity);
-}
-changeLanguages(languages: string) {
-  this.product.languages = parseInt(languages);
-}
-addToCart() {
-  this.sendProduct.emit(this.product);
-}
 
 }
 
