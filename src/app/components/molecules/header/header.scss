@@ -1,0 +1,27 @@
+nav{
+    display:flex;
+    margin: 1rem auto;
+}
+ul{
+    display:flex;
+    list-style-type: none;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0; 
+    text-transform: uppercase;
+    li{
+        cursor: pointer;
+        a{
+            text-decoration: underline;
+            letter-spacing: 0.2rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+}

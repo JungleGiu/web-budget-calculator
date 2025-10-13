@@ -1,0 +1,41 @@
+.service-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #b3ffd6;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input[type="checkbox"] {
+ display : inline;
+    align-self: end;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px
+  }
+  h3 {
+    display : inline;
+ 
+  }
+
+footer {
+  align-self: flex-end;
+  gap : 10px;
+  justify-content: center;
+  display: flex;
+  img{
+     align-self: center;
+  }
+  label{
+    align-self: center;
+  }
+}

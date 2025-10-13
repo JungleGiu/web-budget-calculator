@@ -1,14 +1,17 @@
-<div class="service-card" id="service-card-{{ product.id }}">
-  <h3>{{ product.name }}</h3>
-  <form>
-    <input
+<article class="service-card" id="service-card-{{ product.id }}">
+  <header>
+  <h3>{{ product.name }}</h3> 
+  <input
       type="checkbox"
       id="product-checkbox-{{ product.id }}"
       (change)="toggleSelection($event.target.checked)"
-    />
+    /> 
+  </header>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}€</p>
-    <label for="product-quantity-{{ product.id }}">Number of pages:</label>
+    <footer>
+     <img src="info.png" alt="Number of pages info" />
+    <label for="product-quantity-{{ product.id }}">Number of pages:</label> 
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
       type="number"
@@ -18,6 +21,7 @@
       (change)="updateQuantity($event.target.value)"
       id="product-quantity-{{ product.id }}"
     />
+       <img src="info.png" alt="Number of languages info" />
     <label for="product-languages-{{ product.id }}">Languages utilized:</label>
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
@@ -28,5 +32,5 @@
       value="{{ product.languages }}"
       id="product-languages-{{ product.id }}"
     />
-  </form>
-</div>
+    </footer>
+</article>
