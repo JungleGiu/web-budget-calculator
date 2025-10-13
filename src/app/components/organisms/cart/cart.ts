@@ -11,6 +11,5 @@ import { ClientOrder } from '../../../services/client-order';
 })
 export class Cart {
 clientOrder = inject(ClientOrder)
-cart = this.clientOrder.cart
 total = this.clientOrder.total
 }

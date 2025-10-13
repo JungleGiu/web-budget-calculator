@@ -1,10 +1,11 @@
-import { Component, Output, EventEmitter, output } from '@angular/core';
-import { Input, signal } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Input, inject } from '@angular/core';
 import { Product } from '../../../models/product';
-import { FormsModule } from '@angular/forms';
+import { InfoModal } from '../../../services/info-modal';
+
 @Component({
   selector: 'app-service-card',
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './service-card.html',
   styleUrl: './service-card.scss',
 })
@@ -24,7 +25,7 @@ export class ServiceCard {
   }>();
 
   isSelected = false;
-
+  InjectInfoModal = inject(InfoModal);
   toggleSelection(selected: boolean) {
     this.isSelected = selected;
     this.updateCart.emit({ product: this.product, isSelected: selected });
