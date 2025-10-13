@@ -1,9 +1,16 @@
 <p>checkout-form works!</p>
 <form>
+    <h3>Ask your Prospect</h3>
     <input type="text" placeholder="Name">
-    <input type="text" placeholder="Email">
-
-   <p> Total: {{ total }}</p>
+    <input type="email" placeholder="Email">
+    <input type="tel" placeholder="Phone Number">
+    <p> Services Selected:</p>
+    <ul>
+        @for ( product of cart(); track product.id) {
+        <li>{{ product.name }} - {{ product.quantity }} pages - {{ product.languages }} languages</li>
+        }
+    </ul>
+   <p> Total: {{ total() }} €</p>
 
     <button>Checkout</button>
 </form>

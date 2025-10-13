@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, Input, inject } from '@angular/core';
+import { ClientOrder } from '../../../services/client-order';
 @Component({
   selector: 'app-checkout-form',
   imports: [],
@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './checkout-form.scss'
 })
 export class CheckoutForm {
-@Input({ required: true}) total: number = 0
+
+clientOrder = inject(ClientOrder)
+total = this.clientOrder.total
+cart = this.clientOrder.cart
 }

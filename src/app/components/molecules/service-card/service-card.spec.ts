@@ -20,4 +20,10 @@ describe('ServiceCard', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should toggle selection', () => {
+    component.toggleSelection(true);
+    expect(component.isSelected).toBe(true);
+    component.toggleSelection(false);
+    expect(component.isSelected).toBe(false);
+  })
 });
