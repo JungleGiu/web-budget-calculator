@@ -5,7 +5,7 @@ import { Injectable,signal } from '@angular/core';
 })
 export class InfoModal {
  isOpen = signal(false);
-
+ type = signal('');
     open() {
     this.isOpen.set(true);
   }

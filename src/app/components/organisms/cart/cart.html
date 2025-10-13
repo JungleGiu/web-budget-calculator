@@ -2,3 +2,21 @@
     <app-services-list></app-services-list>
     <app-checkout-form [total]="total()"></app-checkout-form>
 </section>
+@if (infoModal.isOpen()) {
+  <div id="modal-overlay">
+    @switch (infoModal.type()) {
+      @case ('pages') {
+        <div id="modal">
+            <img  src="info.png" alt="Number of pages info" />
+        <p><span>Number of pages</span> indicates the number of pages you want to apply the service to (it may affect the final price)</p><button (click)="infoModal.close()">X</button>
+        </div>
+      }
+      @case ('languages') {
+        <div id="modal">
+            <img src="info.png" alt="Number of languages info" />
+        <p><span>Number of languages</span> refers to the number of languages you want to include in your project (it may affect the final price)</p> <button (click)="infoModal.close()">X</button>
+        </div>
+      }
+    }
+  </div>
+}

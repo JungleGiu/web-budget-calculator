@@ -25,7 +25,7 @@ export class ServiceCard {
   }>();
 
   isSelected = false;
-  InjectInfoModal = inject(InfoModal);
+  infoModal = inject(InfoModal);
   toggleSelection(selected: boolean) {
     this.isSelected = selected;
     this.updateCart.emit({ product: this.product, isSelected: selected });

@@ -10,7 +10,7 @@
     <p>{{ product.description }}</p>
     <p>{{ product.price }}€</p>
     <footer>
-     <img src="info.png" alt="Number of pages info" />
+     <img src="info.png" alt="Number of pages info" (click)="infoModal.type.set('pages'); infoModal.open()" />
     <label for="product-quantity-{{ product.id }}">Number of pages:</label> 
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
@@ -21,7 +21,7 @@
       (change)="updateQuantity($event.target.value)"
       id="product-quantity-{{ product.id }}"
     />
-       <img src="info.png" alt="Number of languages info" />
+       <img src="info.png" alt="Number of languages info" (click)="infoModal.type.set('languages'); infoModal.open()" />
     <label for="product-languages-{{ product.id }}">Languages utilized:</label>
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
@@ -34,3 +34,6 @@
     />
     </footer>
 </article>
+
+
+
