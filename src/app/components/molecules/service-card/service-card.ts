@@ -14,11 +14,16 @@ export class ServiceCard {
     product: Product;
     isSelected: boolean;
   }>();
-  @Output() quantity = new EventEmitter<{ productId: number; quantity: number }>();
-  @Output() languages = new EventEmitter<{ productId: number; languages: number }>();
+  @Output() quantity = new EventEmitter<{
+    productId: number;
+    quantity: number;
+  }>();
+  @Output() languages = new EventEmitter<{
+    productId: number;
+    languages: number;
+  }>();
 
   isSelected = false;
-
 
   toggleSelection(selected: boolean) {
     this.isSelected = selected;

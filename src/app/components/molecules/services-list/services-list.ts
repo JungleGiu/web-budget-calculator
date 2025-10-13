@@ -11,7 +11,6 @@ import { Products, Product } from '../../../models/product';
 })
 export class ServicesList {
   clientOrder = inject(ClientOrder);
-  cart = this.clientOrder.cart;
   total = this.clientOrder.total;
   products = Products;
 

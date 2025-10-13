@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-form',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './checkout-form.scss'
 })
 export class CheckoutForm {
-
+@Input({ required: true}) total: number = 0
 }
