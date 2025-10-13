@@ -1,9 +1,16 @@
 
 <form>
+    <h3>Ask your Prospect</h3>
     <input type="text" placeholder="Name">
     <input type="email" placeholder="Email">
     <input type="tel" placeholder="Phone Number">
-   <p> Total: {{ total }}</p>
+    <p> Services Selected:</p>
+    <ul>
+        @for ( product of cart(); track product.id) {
+        <li>{{ product.name }} - {{ product.quantity }} pages - {{ product.languages }} languages</li>
+        }
+    </ul>
+   <p> Total: {{ total() }} €</p>
 
     <button>Generate your Prospect</button>
 </form>
