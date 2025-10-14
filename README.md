@@ -40,7 +40,7 @@ cd budget
 npm install # or: yarn install, or: pnpm install
 
 # Start the development server
-ng start # or: yarn start, or: pnpm start
+npm start # or: yarn start, or: pnpm start
 
 ```
 Then Open http://localhost:4200 in your browser.

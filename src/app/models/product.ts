@@ -12,7 +12,7 @@ export const Products: Product[] = [
     id: 1,
     name: 'SEO',
     description:
-      'Website optimization for SEO, positioning and search engine marketing of a website',
+    'Website optimization for SEO, positioning and search engine marketing of a website',
     price: 300,
     quantity: 0,
     languages: 0,

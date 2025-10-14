@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { CheckoutForm } from './checkout-form';
 
 describe('CheckoutForm', () => {
@@ -8,7 +8,8 @@ describe('CheckoutForm', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CheckoutForm]
+      imports: [CheckoutForm] ,
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

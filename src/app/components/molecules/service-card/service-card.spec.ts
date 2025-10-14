@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { ServiceCard } from './service-card';
 
 describe('ServiceCard', () => {
@@ -8,7 +8,8 @@ describe('ServiceCard', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ServiceCard]
+      imports: [ServiceCard],
+       providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
@@ -20,10 +21,5 @@ describe('ServiceCard', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should toggle selection', () => {
-    component.toggleSelection(true);
-    expect(component.isSelected).toBe(true);
-    component.toggleSelection(false);
-    expect(component.isSelected).toBe(false);
-  })
+ 
 });

@@ -1,15 +1,14 @@
-import { Injectable,signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InfoModal {
- isOpen = signal(false);
- type = signal('');
-    open() {
+  isOpen = signal(false);
+  type = signal('');
+  open() {
     this.isOpen.set(true);
   }
-
   close() {
     this.isOpen.set(false);
   }
