@@ -1,16 +1,17 @@
+<form [formGroup]="newProspect">
+  <h3>Ask your Prospect</h3>
+  <div id="inputs">
+    <input formControlName="name"  [(ngModel)]="userdata.name" type="text" placeholder="Name" />
+    <input formControlName="email" [(ngModel)]="userdata.email" type="email" placeholder="Email" />
+    <input formControlName="phoneNumber" type="tel" placeholder="Phone Number" />
+  </div>
+  <p>Order Recap:</p>
+  <ul>
+    @for ( product of cart(); track product.id) {
+    <li><span>{{ product.name }} - </span> {{ product.quantity }} pages - {{ product.languages }} languages</li>
+    }
+  </ul>
+  <p><span>Total:</span> {{ total() }} €</p>
 
-<form>
-    <h3>Ask your Prospect</h3>
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <input type="tel" placeholder="Phone Number">
-    <p> Services Selected:</p>
-    <ul>
-        @for ( product of cart(); track product.id) {
-        <li>{{ product.name }} - {{ product.quantity }} pages - {{ product.languages }} languages</li>
-        }
-    </ul>
-   <p> Total: {{ total() }} €</p>
-
-    <button>Generate your Prospect</button>
+  <button (click)="generateProspect()">Generate your Prospect</button>
 </form>
