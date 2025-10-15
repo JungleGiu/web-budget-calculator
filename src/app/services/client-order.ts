@@ -1,6 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Product } from '../models/product';
-import { Prospects } from '../models/prospect';
 @Injectable({
   providedIn: 'root',
 })
@@ -26,5 +25,5 @@ export class ClientOrder {
     this.cart().reduce((sum, p) => sum + p.price + (p.quantity * p.languages * 30), 0)
   );
 
-  prospects = signal(Prospects);
+
 }
