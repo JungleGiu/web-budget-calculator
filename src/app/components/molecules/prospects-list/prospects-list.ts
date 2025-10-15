@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,inject } from '@angular/core';
 import { Prospects } from '../../../models/prospect';
+import { ClientOrder } from '../../../services/client-order';
 @Component({
   selector: 'app-prospects-list',
   imports: [],
@@ -7,6 +8,6 @@ import { Prospects } from '../../../models/prospect';
   styleUrl: './prospects-list.scss'
 })
 export class ProspectsList {
-prospectsList = signal(Prospects)
+prospectsList = inject(ClientOrder).prospects
 
 }
