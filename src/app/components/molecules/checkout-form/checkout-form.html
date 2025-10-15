@@ -1,9 +1,9 @@
-<form [formGroup]="newProspect">
+<form [formGroup]="newProspect" (submit)="generateProspect()">
   <h3>Ask your Prospect</h3>
   <div id="inputs">
-    <input formControlName="name"  [(ngModel)]="userdata.name" type="text" placeholder="Name" />
-    <input formControlName="email" [(ngModel)]="userdata.email" type="email" placeholder="Email" />
-    <input formControlName="phoneNumber" type="tel" placeholder="Phone Number" />
+    <input formControlName="name" required  type="text" placeholder="Name" />
+    <input formControlName="email" required  type="email" placeholder="Email" />
+    <input formControlName="phoneNumber" required type="text" placeholder="Phone Number" />
   </div>
   <p>Order Recap:</p>
   <ul>
@@ -13,5 +13,5 @@
   </ul>
   <p><span>Total:</span> {{ total() }} €</p>
 
-  <button (click)="generateProspect()">Generate your Prospect</button>
+  <button type="submit">Generate your Prospect</button>
 </form>

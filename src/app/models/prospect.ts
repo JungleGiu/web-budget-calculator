@@ -3,9 +3,9 @@ import { Product } from "./product";
 export interface Prospect {
     id: number
     date: Date
-    name: string
-    email: string
-    phoneNumber: number
+    name?: string
+    email?: string
+    phoneNumber?: string
     total: number
     items: Product[]
 }
