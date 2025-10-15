@@ -6,20 +6,20 @@
     <article id="prospect-card-{{ prospect.id }}">
       <header>
         <h3>{{ prospect.name }}</h3>
-        <p>{{ prospect.email }}</p>
-        <p>{{ prospect.phoneNumber }}</p>
-        <p>{{ prospect.date.toLocaleDateString() }}</p>
+        <p>Email :<span> {{ prospect.email }} </span></p>
+        <p>Phone number : <span>{{ prospect.phoneNumber }}</span></p>
+        <p>Date: <span>{{ prospect.date.toLocaleDateString() }}</span></p>
       </header>
       <ul>
         @for ( product of prospect.items; track product.id) {
         <li>
-          <span>{{ product.name }} - </span> {{ product.quantity }} pages -
+          <span>{{ product.name }}</span>{{ product.quantity }} pages -
           {{ product.languages }} languages
         </li>
         }
       </ul>
       <footer>
-      <p>Total: {{ prospect.total }}€</p>
+      <p>Total: <span>{{ prospect.total }}€</span></p>
       </footer>
     </article>
 }
