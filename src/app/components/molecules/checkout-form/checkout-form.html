@@ -1,17 +1,43 @@
 <form [formGroup]="newProspect" (submit)="generateProspect()">
   <h3>Ask your Prospect</h3>
   <div id="inputs">
-    <input formControlName="name" required  type="text" placeholder="Name" />
-    <input formControlName="email" required  type="email" placeholder="Email" />
-    <input formControlName="phoneNumber" required type="text" placeholder="Phone Number" />
+    <div class="input-container" id="name-input">
+      @let name = newProspect.controls.name;
+      <input formControlName="name" minlength="2" type="text" placeholder="Name" />
+      @if (name.invalid && name.touched) {
+      <span>name must be at least 2 characters long</span>
+      }
+    </div>
+    <div class="input-container" id="email-input">
+      @let email = newProspect.controls.email;
+      <input formControlName="email" type="email" placeholder="Email" />
+      @if (email.invalid && email.touched) {
+      <span>email is not valid</span>
+      }
+    </div>
+    <div class="input-container" id="phone-input">
+    @let phoneNumber = newProspect.controls.phoneNumber;
+    <input formControlName="phoneNumber" type="text" placeholder="Phone Number" />
+    @if (phoneNumber.invalid && phoneNumber.touched) {
+    <span>phone number is not valid</span>
+    }
+    </div>
   </div>
   <p>Order Recap:</p>
   <ul>
     @for ( product of cart(); track product.id) {
-    <li><span>{{ product.name }} - </span> {{ product.quantity }} pages - {{ product.languages }} languages</li>
+    <li>
+      <span>{{ product.name }} - </span> {{ product.quantity }} pages -
+      {{ product.languages }} languages
+    </li>
     }
   </ul>
   <p><span>Total:</span> {{ total() }} €</p>
-
+  @if (cart().length === 0 && email.touched && name.touched &&phoneNumber.touched) {
+  <span class="validators">Select the products you want</span>
+  } @if (!email.valid && email.touched || !name.valid && name.touched || !phoneNumber.valid &&
+  phoneNumber.touched) {
+  <span class="validators">Fill all the fields so we can generate your Prospect</span>
+  }
   <button type="submit">Generate your Prospect</button>
 </form>

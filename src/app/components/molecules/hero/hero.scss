@@ -12,8 +12,22 @@ hgroup{
     }
 }
 img{
-   position : relative;
-    height: 290px;
-    width: 100%;
-    object-fit: cover
+width: 100%;
+height: 350px;
+object-fit: cover;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin: 1rem 0;
+    h1{
+        font-weight: 500;
+        font-size: 3rem;
+    }
+    h2{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
 }

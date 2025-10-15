@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core';
-import { History } from './history';
 
-describe('History', () => {
-  let component: History;
-  let fixture: ComponentFixture<History>;
+import { ProspectsList } from './prospects-list';
+
+describe('ProspectsList', () => {
+  let component: ProspectsList;
+  let fixture: ComponentFixture<ProspectsList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [History],
-      providers: [provideZonelessChangeDetection()]
+      imports: [ProspectsList]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(History);
+    fixture = TestBed.createComponent(ProspectsList);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

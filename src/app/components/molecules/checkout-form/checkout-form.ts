@@ -1,7 +1,7 @@
 import { Component,  inject, OnInit } from '@angular/core';
 import { ClientOrder } from '../../../services/client-order';
 import { Prospect, Prospects } from '../../../models/prospect';
-import { FormGroup, FormControl, ReactiveFormsModule,  } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-checkout-form',
   imports: [ReactiveFormsModule],
@@ -15,13 +15,31 @@ cart = this.clientOrder.cart
 
 
 newProspect = new FormGroup({
-  name: new FormControl(''),
-  email: new FormControl(''),
-  phoneNumber: new FormControl(''),
+  name: new FormControl('',{
+    validators: [
+      Validators.required,
+      Validators.minLength(2),
+    ],
+  }),
+  email: new FormControl('',{
+    validators: [
+      Validators.required,
+      Validators.email,
+    ],
+  }),
+  phoneNumber: new FormControl('',{
+    validators: [
+      Validators.required,
+      Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$'),
+    ],
+  }),
 })
 
 
 generateProspect() {
+  if (this.newProspect.invalid || this.cart().length === 0) {
+    return;
+  }
 try{
   const prospect: Prospect = {
     id: Prospects.length + 1,
@@ -33,8 +51,10 @@ try{
     total: this.total()
   };
   Prospects.push(prospect);
-  console.log(Prospects[0]);
-  this.newProspect.reset();}
+  console.log(Prospects);
+  this.newProspect.reset()
+  this.clientOrder.resetCart();
+}
   catch(error){console.log(error)}
 }
 }

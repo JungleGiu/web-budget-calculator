@@ -18,6 +18,9 @@ export class ClientOrder {
  removeFromCart(product: Product) {
     this.cart.update((cart) => cart.filter((p) => p.id !== product.id));
   }
+  resetCart() {
+    this.cart.set([]);
+  }
   total = computed(() =>
     this.cart().reduce((sum, p) => sum + p.price + (p.quantity * p.languages * 30), 0)
   );
