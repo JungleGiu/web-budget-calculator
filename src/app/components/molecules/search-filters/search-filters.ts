@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProspectsHistory } from '../../../services/prospects-history'; 
 @Component({
   selector: 'app-search-filters',
@@ -8,7 +8,8 @@ import { ProspectsHistory } from '../../../services/prospects-history';
 })
 export class SearchFilters {
 allProspects = inject(ProspectsHistory);
-dateFilter = signal(false);
+
+
 filterByDate() {
   this.allProspects.sortByDate();
 }
