@@ -1,1 +1,6 @@
-<p>search-filters works!</p>
+<div id="search-filters">
+    <input type="text" placeholder="Search by name" (input)="filterByName($event.target.value)" />
+    <button (click)="filterByDate()">Filter by date</button>
+    <button (click)="orderByName()">Order by name</button>
+    <button (click)="filterByTotal()">Filter by total</button>
+</div>

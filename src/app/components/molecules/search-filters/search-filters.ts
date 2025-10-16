@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, inject, signal } from '@angular/core';
+import { ProspectsHistory } from '../../../services/prospects-history'; 
 @Component({
   selector: 'app-search-filters',
   imports: [],
@@ -7,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrl: './search-filters.scss'
 })
 export class SearchFilters {
+allProspects = inject(ProspectsHistory);
+
+dateFilter = signal(false);
+filterByDate() {
+  this.allProspects.sortByDate();
+
+}
+filterByName(searchTerm: string) {
+  this.allProspects.searchByName(searchTerm);
+}
+
+filterByTotal() {
+  this.allProspects.sortByTotal();
+}
+orderByName() {
+  this.allProspects.sortByName();
+}
 
 }
