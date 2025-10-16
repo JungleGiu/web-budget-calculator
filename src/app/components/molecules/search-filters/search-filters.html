@@ -1,6 +1,8 @@
 <div id="search-filters">
     <input type="text" placeholder="Search by name" (input)="filterByName($event.target.value)" />
-    <button (click)="filterByDate()">Filter by date</button>
-    <button (click)="orderByName()">Order by name</button>
-    <button (click)="filterByTotal()">Filter by total</button>
+   <div id="buttons">
+    <button (click)="filterByDate()"><img src="date.png" alt="Calendar"/> Date</button>
+    <button (click)="orderByName()"><img src="name.png" alt="Name"/> Name</button>
+    <button (click)="filterByTotal()"><img src="price.png" alt="Total"/> Total</button>
+   </div>
 </div>

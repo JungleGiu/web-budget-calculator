@@ -1,4 +1,4 @@
-<form [formGroup]="newProspect" (submit)="generateProspect()">
+<form [formGroup]="newProspect" >
   <h3>Ask your Prospect</h3>
   <div id="inputs">
     <div class="input-container" id="name-input">
@@ -39,5 +39,5 @@
   phoneNumber.touched) {
   <span class="validators">Fill all the fields so we can generate your Prospect</span>
   }
-  <button type="submit">Generate your Prospect</button>
+  <button (click)="generateProspect()">Generate your Prospect</button>
 </form>

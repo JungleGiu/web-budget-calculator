@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, Input, WritableSignal } from '@angular/core';
 import { inject } from '@angular/core';
 import { ClientOrder } from '../../../services/client-order';
 import { ServiceCard } from '../service-card/service-card';
@@ -10,10 +10,12 @@ import { Products, Product } from '../../../models/product';
   styleUrl: './services-list.scss',
 })
 export class ServicesList {
+  @Input({ required: true }) isSubmitted! : WritableSignal<boolean>  ;
+  
   clientOrder = inject(ClientOrder);
   total = this.clientOrder.total;
   products = Products;
-
+  
   onUpdateCart({ product, isSelected }: { product: Product; isSelected: boolean }) {
     if (isSelected === true) {
       this.clientOrder.addToCart(product);

@@ -1,4 +1,4 @@
-import { Component,  inject, OnInit } from '@angular/core';
+import { Component,  inject, Output, EventEmitter} from '@angular/core';
 import { ClientOrder } from '../../../services/client-order';
 import { Prospect, Prospects } from '../../../models/prospect';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -12,6 +12,9 @@ export class CheckoutForm {
 clientOrder = inject(ClientOrder)
 total = this.clientOrder.total
 cart = this.clientOrder.cart
+
+@Output() formSubmitted = new EventEmitter<void>()
+
 
 
 newProspect = new FormGroup({
@@ -38,7 +41,8 @@ newProspect = new FormGroup({
 
 generateProspect() {
   if (this.newProspect.invalid || this.cart().length === 0) {
-    return;
+    this.newProspect.markAllAsTouched();
+    return
   }
 try{
   const prospect: Prospect = {
@@ -53,7 +57,7 @@ try{
   Prospects.push(prospect);
   console.log(Prospects);
   this.newProspect.reset()
-  this.clientOrder.resetCart();
+  this.formSubmitted.emit()
 }
   catch(error){console.log(error)}
 }

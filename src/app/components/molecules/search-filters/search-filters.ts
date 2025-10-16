@@ -8,21 +8,17 @@ import { ProspectsHistory } from '../../../services/prospects-history';
 })
 export class SearchFilters {
 allProspects = inject(ProspectsHistory);
-
 dateFilter = signal(false);
 filterByDate() {
   this.allProspects.sortByDate();
-
 }
-filterByName(searchTerm: string) {
-  this.allProspects.searchByName(searchTerm);
-}
-
 filterByTotal() {
   this.allProspects.sortByTotal();
 }
 orderByName() {
   this.allProspects.sortByName();
 }
-
+filterByName(searchTerm: string) {
+  this.allProspects.searchByName(searchTerm);
+}
 }

@@ -1,0 +1,18 @@
+#search-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#buttons {
+  display: flex;
+  gap: 2rem;
+  button{
+    background-color: #040b59;
+    color: #fff;
+    padding: 0.5rem ;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

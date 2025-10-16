@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, WritableSignal, effect } from '@angular/core';
 import { Input, inject } from '@angular/core';
 import { Product } from '../../../models/product';
 import { InfoModal } from '../../../services/info-modal';
@@ -11,6 +11,8 @@ import { InfoModal } from '../../../services/info-modal';
 })
 export class ServiceCard {
   @Input({ required: true }) product!: Product;
+  @Input({ required: true }) isSubmitted!: WritableSignal<boolean>;
+
   @Output() updateCart = new EventEmitter<{
     product: Product;
     isSelected: boolean;
@@ -28,6 +30,16 @@ export class ServiceCard {
   infoModal = inject(InfoModal);
   toggleSelection(selected: boolean) {
     this.isSelected = selected;
+    if (!selected) {
+      let quantityInput = document.getElementById(
+        `product-quantity-${this.product.id}`
+      ) as HTMLInputElement;
+      let languagesInput = document.getElementById(
+        `product-languages-${this.product.id}`
+      ) as HTMLInputElement;
+      quantityInput.value = '1';
+      languagesInput.value = '1';
+    }
     this.updateCart.emit({ product: this.product, isSelected: selected });
   }
   updateQuantity(quantity: string) {
@@ -37,5 +49,17 @@ export class ServiceCard {
   updateLanguages(languages: string) {
     let parsedInput = parseInt(languages);
     this.languages.emit({ productId: this.product.id, languages: parsedInput });
+  }
+
+  resetAllCards() {
+    this.toggleSelection(false);
+  }
+
+  constructor() {
+    effect(() => {
+      if (this.isSubmitted()) {
+        this.resetAllCards();
+      }
+    });
   }
 }

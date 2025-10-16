@@ -4,6 +4,7 @@
   <input
       type="checkbox"
       id="product-checkbox-{{ product.id }}"
+      [checked]="isSelected"
       (change)="toggleSelection($event.target.checked)"
     /> 
   </header>
