@@ -1,10 +1,12 @@
 #services-list{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+    flex-direction: row;
     gap: 20px;
 }
 #total{
-    margin-top: 20px;
+  
     align-self: flex-end;
     text-align: end;
     font-weight: bold;
