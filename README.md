@@ -173,4 +173,4 @@ budget/
 - [x] Sorting and search functionality  
 - [x] Dynamic URL generation for sharing budgets
 - [x] Testing setup and form validation  
-- [ ] Polished mobile and UX details  
+- [x] Polished mobile and UX details  
