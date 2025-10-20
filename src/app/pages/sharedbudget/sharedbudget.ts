@@ -33,7 +33,6 @@ export class Sharedbudget {
      
       const paramItems = params.get('items') || '';
       this.items = paramItems? JSON.parse(decodeURIComponent(paramItems)) : [];
-      console.log(this.items);
     });
   }
 }

@@ -55,7 +55,6 @@ try{
     total: this.total()
   };
   Prospects.push(prospect);
-  console.log(Prospects);
   this.newProspect.reset()
   this.formSubmitted.emit()
 }
