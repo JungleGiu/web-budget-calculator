@@ -1,24 +1,31 @@
 <div id="single-prospect">
   <article id="prospect-card-{{ id }}">
     <h3>{{ name }}</h3>
-      <header>
-        <p>Email :<span> {{ email }} </span></p>
-        <p>Phone number : <span>{{ phoneNumber }}</span></p>
-        <p>Date: <span>{{ date }}</span></p>
-      </header>
-      
-      <ul>
-        @for ( product of items; track product.id) {
-        <li>
-          <span>{{ product.name }}</span>{{ product.quantity }} pages -
-          {{ product.languages }} languages
-        </li>
-        }
-      </ul>
-      
-      <footer>
-    
-      <p>Total: <span>{{total }}€</span></p>
-      </footer>
-    </article>
+    <header>
+      <p>
+        Email :<span> {{ email }} </span>
+      </p>
+      <p>
+        Phone number : <span>{{ phoneNumber }}</span>
+      </p>
+      <p>
+        Date: <span>{{ date }}</span>
+      </p>
+    </header>
+
+    <ul>
+      @for ( product of items; track product.id) {
+      <li>
+        <span>{{ product.name }}</span
+        >{{ product.quantity }} pages - {{ product.languages }} languages
+      </li>
+      }
+    </ul>
+
+    <footer>
+      <p>
+        Total: <span>{{ total }}€</span>
+      </p>
+    </footer>
+  </article>
 </div>

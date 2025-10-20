@@ -1,32 +1,27 @@
-hgroup{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: left;
-    margin : 3rem auto 3rem;
-    h1{
-        font-size: 3rem;
-    }
-    h2{
-        font-size: 1.5rem;
-    }
+hgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin: 3rem auto 3rem;
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
 }
-img{
-width: 50%;
-height: 350px;
-object-fit: cover;
+img {
+  width: 50%;
+  height: 350px;
+  object-fit: cover;
 }
-header{
-    display: flex;
-    text-align: center;
-    margin: 1rem auto 3rem;
-    padding: 0 2rem;
-    h1{
-        font-weight: 500;
-        font-size: 3rem;
-    }
-    h2{
-        font-weight: 400;
-        font-size: 1.5rem;
-    }
+header {
+  display: flex;
+  text-align: center;
+  margin: 1rem auto 3rem;
+  padding: 0 2rem;
+  width: 88%;
 }
