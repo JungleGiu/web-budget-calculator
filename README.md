@@ -45,6 +45,17 @@ npm start # or: yarn start, or: pnpm start
 ```
 Then Open http://localhost:4200 in your browser.
 
+
+## Testing
+```bash
+# Run unit tests
+npm test # or: yarn test, or: pnpm test
+```
+
+##Preview
+![Preview](./preview.png)
+
+
 ## Folder Structure
 
 ```bash
@@ -55,6 +66,14 @@ budget/
 ├── tsconfig.json
 ├── tsconfig.app.json
 ├── tsconfig.spec.json
+├── README.md
+├── .gitignore
+├── .editorconfig
+├── node_modules/
+├── dist/
+├── .angular
+├── .vscode
+├── public/
 ├── src/
 │   ├── app/
 │   │   ├── app.html
@@ -63,10 +82,95 @@ budget/
 │   │   ├── app.scss
 │   │   ├── app.spec.ts
 │   │   ├── app.ts
+│   │   ├── components/
+│   │   │   ├── molecules/
+│   │   │   │   ├── checkout-form
+│   │   │   │   │   ├── checkout-form.html
+│   │   │   │   │   ├── checkout-form.scss
+│   │   │   │   │   ├── checkout-form.spec.ts
+│   │   │   │   │   └── checkout-form.ts
+│   │   │   │   ├── services-list
+│   │   │   │   │   ├── services-list.html
+│   │   │   │   │   ├── services-list.scss
+│   │   │   │   │   ├── services-list.spec.ts
+│   │   │   │   │   └── services-list.ts
+│   │   │   │   ├── service-card
+│   │   │   │   │   ├── service-card.html
+│   │   │   │   │   ├── service-card.scss
+│   │   │   │   │   ├── service-card.spec.ts
+│   │   │   │   │   └── service-card.ts
+│   │   │   │   ├── search-filters
+│   │   │   │   │   ├── search-filters.html
+│   │   │   │   │   ├── search-filters.scss
+│   │   │   │   │   ├── search-filters.spec.ts
+│   │   │   │   │   └── search-filters.ts
+│   │   │   │   ├── hero
+│   │   │   │   │   ├── hero.html
+│   │   │   │   │   ├── hero.scss
+│   │   │   │   │   ├── hero.spec.ts
+│   │   │   │   │   └── hero.ts
+│   │   │   │   ├── prospects-list
+│   │   │   │   │   ├── prospects-list.html
+│   │   │   │   │   ├── prospects-list.scss
+│   │   │   │   │   ├── prospects-list.spec.ts
+│   │   │   │   │   └── prospects-list.ts
+│   │   │   ├── organisms/
+│   │   │   │   ├── prospects
+│   │   │   │   │   ├── prospects.html
+│   │   │   │   │   ├── prospects.scss
+│   │   │   │   │   ├── prospects.spec.ts
+│   │   │   │   │   └── prospects.ts
+│   │   │   │   ├── cart
+│   │   │   │   │   ├── cart.html
+│   │   │   │   │   ├── cart.scss
+│   │   │   │   │   ├── cart.spec.ts
+│   │   │   │   │   └── cart.ts
+│   │   ├── pages/
+│   │   │   │   ├── sharedbudget
+│   │   │   │   │   ├── sharedbudget.html
+│   │   │   │   │   ├── sharedbudget.scss
+│   │   │   │   │   ├── sharedbudget.spec.ts
+│   │   │   │   │   └── sharedbudget.ts
+│   │   │   │   ├── home
+│   │   │   │   │   ├── home.html
+│   │   │   │   │   ├── home.scss
+│   │   │   │   │   ├── home.spec.ts
+│   │   │   │   │   └── home.ts
+│   │   ├── services/
+│   │   │   ├── client-order.ts
+│   │   │   ├── client-order.spec.ts
+│   │   │   ├── info-modal.ts
+│   │   │   ├── info-modal.spec.ts
+│   │   │   ├── prospects-history.ts
+│   │   │   └── prospects-history.spec.ts
+│   │   ├── models/
+│   │   │   ├── product.ts
+│   │   │   └── prospect.ts
 │   ├── index.html
 │   ├── main.ts
-│   ├── styles.scss
-│   ├── public/
-
+└── └── styles.scss
 
 ```
+
+## Technologies
+
+- [Angular](https://angular.io/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Css-sass](https://sass-lang.com/)
+- [pnpm](https://pnpm.io/)
+- [Angular CLI](https://cli.angular.io/)
+- [Karma](https://karma-runner.github.io/1.0/index.html)
+- [Jasmine](https://jasmine.github.io/)
+
+## To Do
+
+- [x] Reactive forms with validation  
+- [x] Angular Signals for state management
+- [x] Core calculator logic and dynamic price updates  
+- [x] Multiple budgets management  
+- [x] URL sharing for generated quotes  
+- [x] Basic responsive UI with SASS  
+- [x] Sorting and search functionality  
+- [x] Dynamic URL generation for sharing budgets
+- [x] Testing setup and form validation  
+- [ ] Polished mobile and UX details  
