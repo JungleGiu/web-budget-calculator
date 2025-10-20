@@ -57,3 +57,27 @@ article {
     background-color: #1d4ed8;
   }
 }
+
+@media screen and (max-width: 768px) {
+  article {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 0;
+  }
+  h3{
+    text-align: left;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+   text-align: left;
+  }
+  footer {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  
+  }
+}
