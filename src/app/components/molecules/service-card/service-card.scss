@@ -54,3 +54,10 @@ footer {
     align-self: center;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .service-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
