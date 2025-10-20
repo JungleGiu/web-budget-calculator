@@ -52,7 +52,7 @@ Then Open http://localhost:4200 in your browser.
 npm test # or: yarn test, or: pnpm test
 ```
 
-##Preview
+## Preview
 ![Preview](/public/calc.gif)
 
 
