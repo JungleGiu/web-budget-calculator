@@ -53,7 +53,7 @@ npm test # or: yarn test, or: pnpm test
 ```
 
 ##Preview
-![Preview](./preview.png)
+![Preview](/public/calc.gif)
 
 
 ## Folder Structure
