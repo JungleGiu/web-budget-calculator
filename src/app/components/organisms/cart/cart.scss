@@ -11,17 +11,16 @@
   z-index: 9999;
 }
 #modal {
-  background-color: #9ad0ff;
+  background-color: #fafafa;
   padding: 2rem;
-  border: 1px solid #ffffff;
   position: absolute;
   width: 500px;
   height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   button {
     background-color: #de0202;
     color: #fff;
