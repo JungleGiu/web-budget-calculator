@@ -1,18 +1,24 @@
 <article class="service-card" id="service-card-{{ product.id }}">
   <header>
-  <h3>{{ product.name }}</h3> 
-  <input
+    <hgroup>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+    </hgroup>
+    <input
       type="checkbox"
       id="product-checkbox-{{ product.id }}"
       [checked]="isSelected"
       (change)="toggleSelection($event.target.checked)"
-    /> 
+    />
   </header>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}€</p>
-    <footer>
-     <img src="info.png" alt="Number of pages info" (click)="infoModal.type.set('pages'); infoModal.open()" />
-    <label for="product-quantity-{{ product.id }}">Number of pages:</label> 
+  <h4>{{ product.price }}€</h4>
+  <footer>
+    <img
+      src="info.png"
+      alt="Number of pages info"
+      (click)="infoModal.type.set('pages'); infoModal.open()"
+    />
+    <label for="product-quantity-{{ product.id }}">Pages:</label>
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
       type="number"
@@ -22,8 +28,12 @@
       (change)="updateQuantity($event.target.value)"
       id="product-quantity-{{ product.id }}"
     />
-       <img src="info.png" alt="Number of languages info" (click)="infoModal.type.set('languages'); infoModal.open()" />
-    <label for="product-languages-{{ product.id }}">Languages utilized:</label>
+    <img
+      src="info.png"
+      alt="Number of languages info"
+      (click)="infoModal.type.set('languages'); infoModal.open()"
+    />
+    <label for="product-languages-{{ product.id }}">Languages:</label>
     <input
       [disabled]="!isSelected ? 'disabled' : ''"
       type="number"
@@ -33,8 +43,5 @@
       value="{{ product.languages }}"
       id="product-languages-{{ product.id }}"
     />
-    </footer>
+  </footer>
 </article>
-
-
-
