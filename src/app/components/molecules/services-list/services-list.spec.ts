@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection , signal} from '@angular/core';
 import { ServicesList } from './services-list';
 import { Products } from '../../../models/product';
 describe('ServicesList', () => {
@@ -15,6 +15,7 @@ describe('ServicesList', () => {
 
     fixture = TestBed.createComponent(ServicesList);
     component = fixture.componentInstance;
+    component.isSubmitted = signal(false);
     fixture.detectChanges();
   });
 
@@ -22,8 +23,9 @@ describe('ServicesList', () => {
     expect(component).toBeTruthy();
   });
   it ('should render a service-card for each product in Products array',() => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('app-service-card')).toBeTruthy();
-    expect(compiled.querySelectorAll('app-service-card').length).toEqual(Products.length);
+   component.products = Products;
+   fixture.detectChanges();
+   const serviceCards = fixture.nativeElement.querySelectorAll('app-service-card');
+   expect(serviceCards.length).toEqual(Products.length);
   })
 });

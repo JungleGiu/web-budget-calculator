@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { SearchFilters } from './search-filters';
 
 describe('SearchFilters', () => {
@@ -8,7 +8,8 @@ describe('SearchFilters', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchFilters]
+      imports: [SearchFilters],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { ClientOrder } from './client-order';
-import {Products} from "../models/product";
+import { Products } from '../models/product';
 describe('ClientOrder', () => {
   let service: ClientOrder;
 
@@ -46,15 +46,21 @@ describe('ClientOrder', () => {
     service.updateLanguages(Products[0].id, 2);
     expect(service.cart()[0].languages).toEqual(2);
   });
-  it ('should provide the total of the cart', () => {
+  it('should provide the total of the cart', () => {
     expect(service.total).toBeTruthy();
     expect(service.total()).toEqual(0);
     service.addToCart(Products[0]);
-    expect(service.total()).toEqual(service.cart()[0].price);
+    expect(service.total()).toEqual(
+      service.cart()[0].price + service.cart()[0].quantity * service.cart()[0].languages * 30
+    );
     service.addToCart(Products[1]);
-    expect(service.total()).toEqual(service.cart()[0].price + service.cart()[1].price);
+    expect(service.total()).toEqual(
+      service.cart().reduce((sum, p) => sum + p.price + p.quantity * p.languages * 30, 0)
+    );
     service.updateLanguages(Products[0].id, 2);
     service.updateQuantity(Products[1].id, 2);
-    expect(service.total()).toEqual(service.cart()[0].price + (service.cart()[0].quantity * service.cart()[0].languages * 30) +  service.cart()[1].price);
-  })
+    expect(service.total()).toEqual(
+      service.cart().reduce((sum, p) => sum + p.price + p.quantity * p.languages * 30, 0)
+    );
+  });
 });

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection, signal } from '@angular/core';
 import { ServiceCard } from './service-card';
 import { Product } from '../../../models/product';
 
@@ -25,6 +25,7 @@ describe('ServiceCard', () => {
     fixture = TestBed.createComponent(ServiceCard);
     component = fixture.componentInstance;
     component.product = mockProduct;
+    component.isSubmitted = signal(false);
     fixture.detectChanges();
   });
 

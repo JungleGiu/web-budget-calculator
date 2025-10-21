@@ -16,17 +16,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  
-  it ('should render header',() => {
- const fixture = TestBed.createComponent(App);
- fixture.detectChanges();
- const compiled = fixture.nativeElement;
- expect(compiled.querySelector('app-header')).toBeTruthy();
-  })
-  it ('should render hero',() => {
-    const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('app-hero')).toBeTruthy();
-     })
+it ('should render the router-outlet', () => {
+  const fixture = TestBed.createComponent(App);
+  fixture.detectChanges();
+  const compiled = fixture.nativeElement;
+  expect(compiled.querySelector('router-outlet')).toBeTruthy();
+})
+
 });

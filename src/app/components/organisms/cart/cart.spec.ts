@@ -21,4 +21,10 @@ describe('Cart', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it ('should change isSubmitted when formSubmitted', () => {
+    expect(component.isSubmitted()).toEqual(false);
+    component.onFormSubmitted();
+    expect(component.isSubmitted()).toEqual(true);
+    
+  })
 });
