@@ -23,6 +23,10 @@ export class ProspectsHistory {
     );
   }
   searchByName(searchTerm: string) {
+    if (searchTerm === '') {
+      this.prospects.set(Prospects);
+      return
+    }
     this.prospects.set(
       this.prospects().filter((prospect: Prospect) =>
         prospect.name?.toLowerCase().includes(searchTerm.toLowerCase())
